@@ -10,12 +10,13 @@ import { TiDeleteOutline } from "react-icons/ti";
 import toast from "react-hot-toast";
 import { useStateContext } from "context/StateContext";
 import { urlFor } from "lib/client";
+import product from "sanityecommerce/schemas/product";
 
 const Cart = () => {
   const cartRef = useRef();
-  const { totalPrice, totalQuantities, cartItems, setShowCart , toggleCartItemQuantity } =
+  const { totalPrice, totalQuantities, cartItems, setShowCart , toggleCartItemQuantity, onRemove } =
     useStateContext();
-
+console.log(cartItems)
   return (
     <div className="cart-wrapper" ref={cartRef}>
       <div className="cart-container">
@@ -71,7 +72,7 @@ const Cart = () => {
                         </span>
                       </p>
                     </div>
-                    <button type="button" className="remove-item" onClick=''>
+                    <button type="button" className="remove-item" onClick={() => onRemove(item)}>
                       <TiDeleteOutline />
                     </button>
                   </div>
