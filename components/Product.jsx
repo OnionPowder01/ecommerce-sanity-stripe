@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 
 import { urlFor } from 'lib/client'
-import product from 'sanityecommerce/schemas/product'
 
 
 function Product({ product: { image, name, slug, price} }) {
